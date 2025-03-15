@@ -5,8 +5,8 @@ button.addEventListener('click', ()=> {
         alert('Button clicked!');
         chrome.tabs.query({active:true}, (tab) => {
             chrome.scripting.executeScript({
-                target: {tabId: tab.id},
-                files: "content.js"
+                target: {tabId: tab[0].id},
+                files: ["src/content.js"]
             })  
         })
 });
