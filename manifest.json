@@ -4,17 +4,11 @@
   "version": "1.0",
   "description": "A simple Chrome extension example.",
   "permissions": [
-    "activeTab"
+    "scripting", "activeTab"
   ],
   "background": {
     "service_worker": "src/background.js"
   },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["src/content.js"]
-    }
-  ],
   "action": {
     "default_popup": "src/popup/popup.html",
     "default_icon": {
