@@ -1,5 +1,12 @@
-const button = document.getElementById('myButton');
-    button.addEventListener('click', ()=> {
+const button = document.querySelector('.myButton');
+
+button.addEventListener('click', ()=> {
         // Handle button click
         alert('Button clicked!');
+        chrome.tabs.query({active:true}, (tab) => {
+            chrome.scripting.executeScript({
+                target: {tabId: tab.id},
+                files: "content.js"
+            })  
+        })
 });
